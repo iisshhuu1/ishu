@@ -1,0 +1,117 @@
+/* ===========================
+   CSS Variables (Theme)
+   =========================== */
+:root {
+  /* Colors */
+  --bg-color: #ffe;
+  --text-color: #228567;
+  --name-color: #000;
+  --date-color: #808080;
+  /* Primary color as RGB for rgba use (derived from --text-color: #228567) */
+  --primary-rgb: 34,133,103;
+}
+
+/* ===========================
+   Global Styles
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  font: 14px/1.4 sans-serif;
+  overflow: hidden;
+}
+
+/* ===========================
+   Main Canvas Container
+   =========================== */
+#main {
+  position: relative;
+  width: 1100px;
+  height: 680px;
+}
+
+#canvas {
+  width: 1100px;
+  height: 680px;
+}
+
+/* ===========================
+   Love Letter Content
+   =========================== */
+#letter {
+  position: absolute;
+  width: 400px;
+  height: 425px;
+  left: 60px;
+  top: 80px;
+  display: none;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+/* ===========================
+   Time Counter Display
+   =========================== */
+#clock-box {
+  position: absolute;
+  left: 60px;
+  top: 550px;
+  font-size: 28px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#clock-text {
+  color: var(--date-color);
+}
+
+#clock-text .name {
+  color: var(--name-color);
+}
+
+#clock {
+  margin-left: 48px;
+}
+
+#clock .digit {
+  font-size: 64px;
+}
+
+/* ===========================
+   Floating Button (Bottom-Left)
+   =========================== */
+#floating-btn {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(var(--primary-rgb), 0.5); /* 50% transparent using theme color */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  z-index: 9999;
+}
+
+#floating-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+}
+
+#floating-btn:focus {
+  outline: 3px solid rgba(var(--primary-rgb), 0.35);
+  outline-offset: 2px;
+}
